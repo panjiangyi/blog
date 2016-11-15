@@ -1,0 +1,20 @@
+*{
+	padding:0px;
+	margin:0px;
+	font:14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif
+}
+html,body {
+	height:100%;
+	width:100%;
+}
+a {
+	text-decoration:none;
+	color:inherit;
+	transition: color 0.2s;
+}
+a:hover {
+	color:rgb(255,255,255);
+}
+header#nav {
+	transition: background-color 0.5s,transform 0.5s;
+}
