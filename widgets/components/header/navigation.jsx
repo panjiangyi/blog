@@ -1,4 +1,5 @@
 import React, {Component } from 'react';
+import {Link } from 'react-router';
 const ulCss = {
 			listStyleType:'none',
 			display:'inline',
@@ -21,13 +22,13 @@ class Navi extends Component {
 
 	}
 	render(){
-		let navTxt = ['Projects','About','Culture'];
+		let navTxt = ['Article','About','Culture'];
 		navTxt.reverse();
 		let list = [];
 		navTxt.forEach((d,i)=>{
 			list.push(
 					<li style={liCss} key={i}>
-						<a  target='_blank' style={aCss} href='#'>{d}</a>
+						<Link to={'/'+d} style={aCss}>{d}</Link>
 					</li>
 				)
 		})

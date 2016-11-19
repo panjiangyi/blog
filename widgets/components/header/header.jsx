@@ -6,7 +6,8 @@ const css = {
 	padding:'1.4% 0% 0.6% 0%',
 	backgroundColor:'rgba(17,17,17,0.6)',
 	position:'fixed',
-	transform:'translateY(0px)'
+	transform:'translateY(0px)',
+	zIndex:999
 }
 let scrollAction = {},scrollDirection;
  function scrollFunc() {
@@ -65,6 +66,7 @@ export default class Header extends Component{
 				<header ref='header' id="nav" style={css}>
 					<Name />
 					<Nav />
+					
 				</header>
 			)}
 }

@@ -18,3 +18,14 @@ a:hover {
 header#nav {
 	transition: background-color 0.5s,transform 0.5s;
 }
+div.title {
+	position:relative;
+	left:0px;
+	height:20%;
+	width:100%;
+	transition: background-color 0.5s,width 0.5s,height 0.5s;
+}
+div.title:hover {
+	background-color:green;
+	height:30%;
+}
