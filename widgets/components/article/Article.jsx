@@ -4,6 +4,7 @@ const css = {
 	width:'70%',
 	height:'100%',
 	overflowY:'auto',
+	overflowX:'hidden',
 	backgroundColor:'gold',
 	position:'relative',
 	fontSize:'0px',
@@ -19,16 +20,22 @@ export default class Article extends Component {
 	componentDidMount() {
 		// this.refs.article.addEventListener('scroll',(e)=>{
 		// },false)
-		setTimeout(()=>{
+		// setTimeout(()=>{
 				this.setState({
 				titles:['aa','bb','cc','d','e','f','g','h']
 			})
-			},3000)
+			// },3000)
+	}
+	toEssay(){
+		this.refs.esCon.style.transform='translateX(-50%)'
 	}
   render() {
     return (
       <div id="article" ref='article' style={css}>
-      	{<Titles titles={this.state.titles}/>}
+      	<div id='esCon' ref='esCon'>
+      	{<Titles toEssay={this.toEssay.bind(this)} titles={this.state.titles}/>}
+      	{this.props.children}
+      	</div>
       </div>
     );
   }

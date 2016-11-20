@@ -19,7 +19,6 @@ class Navi extends Component {
 		super(props);
 	}
 	componentDidMount() {
-
 	}
 	render(){
 		let navTxt = ['Article','About','Culture'];
