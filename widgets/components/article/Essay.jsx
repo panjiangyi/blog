@@ -1,21 +1,35 @@
 import React, {Component } from 'react';
+import history from './../history';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 const css = {
-	width:'50%',
+	width:'70%',
 	height:'100%',
-	position:'absolute',
-	left:'50%',
-	backgroundColor:'red'
+	position:'fixed',
+	left:'30%',
+	backgroundColor:'#fff'
 }
+
 export default class Essay extends Component {
 	constructor(props) {
 		super(props);
 	}
 	componentDidMount() {
 	}
+	backTowards(){
+		history.goBack();
+	}
 	render(){
-		console.log(this.props.params.d)
 		return (
-			<div id='ess' style={css}>{this.props.params.d}</div>
+			<ReactCSSTransitionGroup transitionName="essay"
+      					transitionEnterTimeout={300}
+      					transitionLeaveTimeout={300}
+      					transitionAppear={true}
+      					transitionAppearTimeout={300}
+      					>
+			<div id='ess' onClick={this.backTowards} style={css}>
+				{this.props.params.d}
+			</div>
+			</ReactCSSTransitionGroup>
 			)
 	}
 }

@@ -9,7 +9,6 @@ import Article from './components/article/Article.jsx'
 import Essay from './components/article/Essay.jsx'
 import Hospital from './components/Hospital.jsx'
 import School from './components/School.jsx'
-import Profiles from './components/profiles/Profiles.jsx'
 import history from './components/history'
 const css = {
 	width:'100%',
@@ -23,7 +22,6 @@ class App extends Component{
 		return (
 			<div style={css}>
 				<Header />
-				<Profiles/>
 				{this.props.children}
 			</div>
 			)

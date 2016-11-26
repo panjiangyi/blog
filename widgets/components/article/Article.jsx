@@ -1,41 +1,47 @@
 import React, { Component } from 'react';
 import Titles from './Titles.jsx';
+import Profiles from './../profiles/Profiles.jsx'
 const css = {
-	width:'70%',
-	height:'100%',
-	overflowY:'auto',
-	overflowX:'hidden',
-	backgroundColor:'gold',
-	position:'relative',
-	fontSize:'0px',
-	lineHeight:'0px'
+	width:'100%',
+	// backgroundColor:'gold',
+	position:'relative'
 }
 export default class Article extends Component {
 	constructor(props) {
 		super(props);
 		this.state={
-			titles:['a','b','c']
+			titles:[{
+				title:'',
+				preView:''
+			},{
+				title:'深入浅出Fetch API',
+				preView:'深入浅出Fetch API'
+			},{
+				title:'MutationObserver-DOM树变化监控器',
+				preView:'MutationObserver-DOM树变化监控器'
+			},{
+				title:'MutationObserver-DOM树变化监控器',
+				preView:'MutationObserver-DOM树变化监控器'
+			},{
+				title:'MutationObserver-DOM树变化监控器',
+				preView:'MutationObserver-DOM树变化监控器'
+			},{
+				title:'MutationObserver-DOM树变化监控器',
+				preView:'MutationObserver-DOM树变化监控器'
+			}]
 		}
 	}
 	componentDidMount() {
-		// this.refs.article.addEventListener('scroll',(e)=>{
-		// },false)
-		// setTimeout(()=>{
-				this.setState({
-				titles:['aa','bb','cc','d','e','f','g','h']
-			})
-			// },3000)
-	}
-	toEssay(){
-		this.refs.esCon.style.transform='translateX(-50%)'
+		
+
 	}
   render() {
     return (
       <div id="article" ref='article' style={css}>
-      	<div id='esCon' ref='esCon'>
-      	{<Titles toEssay={this.toEssay.bind(this)} titles={this.state.titles}/>}
-      	{this.props.children}
-      	</div>
+      	<Profiles />
+      	<Titles titles={this.state.titles}/>
+      		{this.props.children}
+      	<div className='clear'></div>
       </div>
     );
   }

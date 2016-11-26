@@ -6,7 +6,17 @@
 	<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
 </head>
 <body>
-	<div style="height:100%;width:100%" id='app'></div>
+	<div style="width:100%" id='app'></div>
 	<script type="text/javascript" src="assets/bundle.js"></script>
+	<script src="./vendor/loiter.min.js"></script>
+	<script>
+    	loiter.start({
+        width:354,
+        height:1228,
+        num:20,
+        container:document.getElementsByTagName('canvas')[0],
+        FPS:200,
+    	});
+	</script>
 </body>
 </html>

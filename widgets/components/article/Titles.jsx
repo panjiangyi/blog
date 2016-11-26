@@ -2,14 +2,19 @@ import React, { Component } from 'react';
 import history from './../history'
 import {Link } from 'react-router';
 const conCss = {
-	width:'50%',
-	height:'100%',
-	position:'absolute',
-	display:'inline-block',
+	width:'70%',
+	float:'right',
 }
 const titleCss = {
-	
-	outline:'1px solid red'
+	// borderBottom:'1px solid grey',
+	padding:'2% 4%'
+}
+const linkCss = {
+	fontSize:'30px',
+}
+const pCss = {
+	padding:'2%',
+	fontSize:'15px',
 }
 let essayTt = [],toEssay;
 export default class Titles extends Component {
@@ -22,14 +27,15 @@ export default class Titles extends Component {
 	componentWillReceiveProps(nextProps) {
 		essayTt = [];
 	}
-	onClick(e){
-		console.log('click',e.target)
-		toEssay();
-	}
-	getTitle(d,i){
+
+	getTitle(data,i){
+		let d = data.title,
+			preView = data.preView,
+			className=i===0?'no-title':'title'
 		essayTt.push(
-			<div className='title' key={i} style={titleCss}>
-				<Link to={'/Article/Essay/'+d}>{d}</Link>
+			<div className={className} key={i} style={titleCss}>
+				<Link style={linkCss} to={'/Article/Essay/'+d}>{d}</Link>
+				<p style={pCss}>{preView}</p>
 			</div>
 			)
 	}
@@ -40,9 +46,8 @@ export default class Titles extends Component {
   render() {
 	this.props.titles.forEach(this.getTitle)
     return (
-      <div onClick={this.onClick} style={conCss} >
+      <div style={conCss} >
       {essayTt}
-      {this.props.children}
       </div>
     );
   }
