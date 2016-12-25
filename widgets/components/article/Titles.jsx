@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import history from './../history'
 import {Link } from 'react-router';
 const conCss = {
-	width:'70%',
+	width:'100%',
 	float:'right',
 }
 const titleCss = {
@@ -29,12 +29,12 @@ export default class Titles extends Component {
 	}
 
 	getTitle(data,i){
-		let d = data.title,
+		let d = data.path,
 			preView = data.preView,
-			className=i===0?'no-title':'title'
+			className='title'
 		essayTt.push(
 			<div className={className} key={i} style={titleCss}>
-				<Link style={linkCss} to={'/Article/Essay/'+d}>{d}</Link>
+				<Link style={linkCss} to={'/Article/Essay/'+d}>{data.title}</Link>
 				<p style={pCss}>{preView}</p>
 			</div>
 			)

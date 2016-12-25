@@ -3,11 +3,13 @@ import Name from './name.jsx'
 import Nav from './navigation.jsx'
 const css = {
 	width:'100%',
-	padding:'1.4% 0% 0.6% 0%',
+	height:'6%',
+	padding:'1% 0% 0% 0%',
 	backgroundColor:'rgba(17,17,17,0.6)',
 	position:'fixed',
 	transform:'translateY(0px)',
-	zIndex:999
+	zIndex:999,
+	boxSizing:'border-box'
 }
 let scrollAction = {},scrollDirection;
  function scrollFunc() {
@@ -42,18 +44,18 @@ export default class Header extends Component{
 	}
 	componentDidMount() {
 		this.header = this.refs.header;
-		window.addEventListener('scroll',this.scroll.bind(this),false)
+		// window.addEventListener('scroll',this.scroll.bind(this),false)
 	}
 	scroll(){
 		scrollFunc()
 		switch(scrollDirection){
 			case 'up':
-				this.header.style.backgroundColor = 'rgba(17,17,17,0.6)';
-				this.header.style.transform = 'translateY(0px)';
+				this.header.style.backgroundColor = 'grey';
+				// this.header.style.transform = 'translateY(0px)';
 			  break;
 			case 'down':
 				this.header.style.backgroundColor = 'rgba(17,17,17,0)';
-				this.header.style.transform = 'translateY(-100px)';
+				// this.header.style.transform = 'translateY(-100px)';
 			  break;
 			default:
 			}

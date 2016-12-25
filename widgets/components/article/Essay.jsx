@@ -5,29 +5,38 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 const css = {
 	boxSizing:'border-box',
 	width:'70%',
-	height:'100%',
-	position:'fixed',
-	left:'30%',
-	padding:'5% 0%',
+	marginLeft:'30%',
+	paddingLeft:'50px',
+	wordBreak:'break-all',
+	lineHeight:'3em',
 	backgroundColor:'#ddd'
 }
-let mk;
+let translatedEssay;
 export default class Essay extends Component {
 	constructor(props) {
 		super(props);
+		this.state={
+			content:''
+		}
 	}
 	componentWillMount() {
-		
+		// console.log(`http://${location.hostname}/contents/${this.props.params.id}.md`)
+		fetch(`http://${location.hostname}/contents/${this.props.params.id}.md`)
+		.then(response => response.text())
+		  .then(data => {
+		  	this.setState({content:marked(data)});
+		  })
+		  .catch(e => translatedEssay=(console.error(e),"#Oops, error"))
 	}
 	componentDidMount() {
-
 	}
 	backTowards(){
 		history.goBack();
 	}
 	render(){
 		return (
-			<ReactCSSTransitionGroup transitionName="essay"
+			<ReactCSSTransitionGroup component="div" 
+						transitionName="essay"
       					transitionEnterTimeout={300}
       					transitionLeaveTimeout={300}
       					transitionAppear={true}
@@ -35,8 +44,8 @@ export default class Essay extends Component {
       					>
 			<div 
 				id='ess' 
-				dangerouslySetInnerHTML={{__html:marked('mark *down*')}} 
-			 	onClick={this.backTowards} style={css}>
+				dangerouslySetInnerHTML={{__html:this.state.content}} 
+			 	onDoubleClick={this.backTowards} style={css}>
 			</div>
 			</ReactCSSTransitionGroup>
 			)
