@@ -32,7 +32,7 @@ render((
 	<Router history={history}>
 		<Route path="/" component={App}>
 			<Route path="/Article" component={Article}>
-				<Route path='Essay/:d' component={Essay}/>
+				<Route   path='Essay/:d' component={Essay}/>
 			</Route>
 			<Route path="/About" component={School}/>
 			<Route path="/Culture" component={Hospital}/>
