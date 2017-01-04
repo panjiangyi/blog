@@ -5,6 +5,8 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 const css = {
 	boxSizing:'border-box',
 	width:'70%',
+	height:'100%',
+	// overflow:'auto',
 	marginLeft:'30%',
 	paddingLeft:'50px',
 	wordBreak:'break-all',
@@ -21,7 +23,7 @@ export default class Essay extends Component {
 	}
 	componentWillMount() {
 		// console.log(`http://${location.hostname}/contents/${this.props.params.id}.md`)
-		fetch(`http://${location.hostname}/contents/${this.props.params.id}.md`)
+		fetch(`http://${location.hostname}:5000/contents/${this.props.params.id}.md`)
 		.then(response => response.text())
 		  .then(data => {
 		  	this.setState({content:marked(data)});

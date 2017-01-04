@@ -6,7 +6,7 @@ const css = {
 }
 let Name=()=>{
 	return (
-			<span style={css}>Pjy's blog</span>
+			<span style={css}>AlwaysWet King</span>
 		)
 }
 export default Name;

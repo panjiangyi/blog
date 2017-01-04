@@ -29,7 +29,7 @@ div.title {
 	transition: 0.3s ease;
 }
 div.title:hover {
-	background-color:#d3d3d3;
+	background-color:rgba(0,0,0,0.2);
 	height:300px;
 	width:95%;
 }
@@ -42,7 +42,7 @@ div#esCon {
 	overflow: visible;
 }
 div#profiles {
-	background: linear-gradient(rgba(17,17,17,0.6), white)
+	/*background: linear-gradient(rgba(17,17,17,0.6), white)*/
 }
 .clear {
 	clear:both;

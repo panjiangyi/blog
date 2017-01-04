@@ -147,6 +147,7 @@
 	(0, _reactDom.render)(_react2.default.createElement(
 		_reactRouter.Router,
 		{ history: _history2.default },
+		_react2.default.createElement(_reactRouter.Redirect, { from: '/', to: '/Article' }),
 		_react2.default.createElement(
 			_reactRouter.Route,
 			{ path: '/', component: App },
@@ -196,7 +197,7 @@
 	
 	
 	// module
-	exports.push([module.id, "*{\r\n\tpadding:0px;\r\n\tmargin:0px;\r\n\tfont-family:\"Helvetica Neue\",Helvetica,Arial,\"Microsoft Yahei\",\"Hiragino Sans GB\",\"Heiti SC\",\"WenQuanYi Micro Hei\",sans-serif\r\n}\r\nhtml,body {\r\n\twidth:100%;\r\n\theight:100%;\r\n}\r\nbody{\r\n\tposition:relative;\r\n}\r\na {\r\n\ttext-decoration:none;\r\n\tcolor:inherit;\r\n\ttransition: color 0.2s;\r\n}\r\n.title a:hover {\r\n\tcolor:#555;\r\n\t/*font-size:35px;*/\r\n}\r\nheader#nav {\r\n\ttransition: 0.3s;\r\n}\r\ndiv.title {\r\n\theight:200px;\r\n\twidth:92%;\r\n\tfloat:right;\r\n\ttransition: 0.3s ease;\r\n}\r\ndiv.title:hover {\r\n\tbackground-color:#d3d3d3;\r\n\theight:300px;\r\n\twidth:95%;\r\n}\r\ndiv#esCon {\r\n\twidth:70%;\r\n\theight:100%;\r\n\tmargin-left: 30%;\r\n\t/*transition: transform 0.5s;*/\r\n\t/*transform:translateX(0%);*/\r\n\toverflow: visible;\r\n}\r\ndiv#profiles {\r\n\tbackground: linear-gradient(rgba(17,17,17,0.6), white)\r\n}\r\n.clear {\r\n\tclear:both;\r\n}\r\n\r\n.essay-enter {\r\n\topacity: 0;\r\n\ttransform: translateX(-250px);\r\n}\r\n.essay-enter.essay-enter-active {\r\n\topacity: 1;\r\n\ttransform: translateX(0);\r\n\ttransition: 0.3s;\r\n}\r\n.essay-leave.essay-leave-active {\r\n\topacity: 0;\r\n\ttransform: translateX(-250px);\r\n\ttransition: 0.3s;\r\n}\r\n.essay-appear {\r\n\topacity: 0;\r\n\ttransform: translateX(-250px);\r\n}\r\n\r\n.essay-appear-active {\r\n\topacity: 1;\r\n\ttransform: translateX(0);\r\n\ttransition: 0.3s;\r\n}", ""]);
+	exports.push([module.id, "*{\r\n\tpadding:0px;\r\n\tmargin:0px;\r\n\tfont-family:\"Helvetica Neue\",Helvetica,Arial,\"Microsoft Yahei\",\"Hiragino Sans GB\",\"Heiti SC\",\"WenQuanYi Micro Hei\",sans-serif\r\n}\r\nhtml,body {\r\n\twidth:100%;\r\n\theight:100%;\r\n}\r\nbody{\r\n\tposition:relative;\r\n}\r\na {\r\n\ttext-decoration:none;\r\n\tcolor:inherit;\r\n\ttransition: color 0.2s;\r\n}\r\n.title a:hover {\r\n\tcolor:#555;\r\n\t/*font-size:35px;*/\r\n}\r\nheader#nav {\r\n\ttransition: 0.3s;\r\n}\r\ndiv.title {\r\n\theight:200px;\r\n\twidth:92%;\r\n\tfloat:right;\r\n\ttransition: 0.3s ease;\r\n}\r\ndiv.title:hover {\r\n\tbackground-color:#d3d3d3;\r\n\theight:300px;\r\n\twidth:95%;\r\n}\r\ndiv#esCon {\r\n\twidth:70%;\r\n\theight:100%;\r\n\tmargin-left: 30%;\r\n\t/*transition: transform 0.5s;*/\r\n\t/*transform:translateX(0%);*/\r\n\toverflow: visible;\r\n}\r\ndiv#profiles {\r\n\t/*background: linear-gradient(rgba(17,17,17,0.6), white)*/\r\n}\r\n.clear {\r\n\tclear:both;\r\n}\r\n\r\n.essay-enter {\r\n\topacity: 0;\r\n\ttransform: translateX(-250px);\r\n}\r\n.essay-enter.essay-enter-active {\r\n\topacity: 1;\r\n\ttransform: translateX(0);\r\n\ttransition: 0.3s;\r\n}\r\n.essay-leave.essay-leave-active {\r\n\topacity: 0;\r\n\ttransform: translateX(-250px);\r\n\ttransition: 0.3s;\r\n}\r\n.essay-appear {\r\n\topacity: 0;\r\n\ttransform: translateX(-250px);\r\n}\r\n\r\n.essay-appear-active {\r\n\topacity: 1;\r\n\ttransform: translateX(0);\r\n\ttransition: 0.3s;\r\n}", ""]);
 	
 	// exports
 
@@ -26375,7 +26376,7 @@
 		return _react2.default.createElement(
 			'span',
 			{ style: css },
-			'Pjy\'s blog'
+			'AlwaysWet King'
 		);
 	};
 	exports.default = Name;
@@ -26520,7 +26521,8 @@
 	
 	var css = {
 		width: '70%',
-		float: 'left'
+		position: 'absolute',
+		left: '30%'
 	};
 	
 	var Article = function (_Component) {
@@ -26533,25 +26535,25 @@
 	
 			_this.state = {
 				titles: [{
-					title: '欢迎使用 MarkdownPad 2',
+					title: '修辞',
 					path: 1,
-					preView: 'Welcome to MarkdownPad 2'
+					preView: '中学的时候。 我问同桌。 怎么样才能让语言看上去更有美感……'
 				}, {
-					title: 'MutationObserver-DOM树变化监控器',
+					title: '当时我就被赶出了考场',
 					path: 2,
-					preView: 'MutationObserver-DOM树变化监控器'
+					preView: '交白卷是一种怎样的体验？'
 				}, {
-					title: 'MutationObserver-DOM树变化监控器',
+					title: '还没写',
 					path: 3,
-					preView: 'MutationObserver-DOM树变化监控器'
+					preView: '还没写'
 				}, {
-					title: 'MutationObserver-DOM树变化监控器',
+					title: '还没写',
 					path: 4,
-					preView: 'MutationObserver-DOM树变化监控器'
+					preView: '还没写'
 				}, {
-					title: 'MutationObserver-DOM树变化监控器',
+					title: '还没写',
 					path: 5,
-					preView: 'MutationObserver-DOM树变化监控器'
+					preView: '还没写'
 				}]
 			};
 			return _this;
@@ -26745,6 +26747,8 @@
 	var css = {
 		boxSizing: 'border-box',
 		width: '70%',
+		height: '100%',
+		// overflow:'auto',
 		marginLeft: '30%',
 		paddingLeft: '50px',
 		wordBreak: 'break-all',
@@ -30342,7 +30346,7 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
 	});
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -30350,6 +30354,10 @@
 	var _react = __webpack_require__(6);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _loiterMin = __webpack_require__(255);
+	
+	var _loiterMin2 = _interopRequireDefault(_loiterMin);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -30360,40 +30368,132 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var css = {
-		width: '30%',
-		height: '94%',
-		// backgroundColor:'grey',
-		fontSize: '0px', //清除canvas标签导致的一行缝隙
-		float: 'left'
-	};
+	  width: '30%',
+	  height: '94%',
+	  position: 'fixed',
+	  fontSize: '0px' };
 	
 	var Profiles = function (_Component) {
-		_inherits(Profiles, _Component);
+	  _inherits(Profiles, _Component);
 	
-		function Profiles(props) {
-			_classCallCheck(this, Profiles);
+	  function Profiles(props) {
+	    _classCallCheck(this, Profiles);
 	
-			return _possibleConstructorReturn(this, (Profiles.__proto__ || Object.getPrototypeOf(Profiles)).call(this, props));
-		}
+	    return _possibleConstructorReturn(this, (Profiles.__proto__ || Object.getPrototypeOf(Profiles)).call(this, props));
+	  }
 	
-		_createClass(Profiles, [{
-			key: 'componentDidMount',
-			value: function componentDidMount() {}
-		}, {
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'div',
-					{ ref: 'test', id: 'profiles', style: css },
-					_react2.default.createElement('canvas', { id: 'loiter', style: { width: '100%', height: '100%' } })
-				);
-			}
-		}]);
+	  _createClass(Profiles, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var widHei = document.defaultView.getComputedStyle(this.refs.loiter);
+	      _loiterMin2.default.loiter.start({
+	        width: +widHei.width.split('px')[0],
+	        height: +widHei.height.split('px')[0],
+	        num: 11,
+	        container: this.refs.loiter,
+	        FPS: 150,
+	        mode: 'through',
+	        circleColor: 'rgba(0,0,0,0.2)'
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { id: 'profiles', style: css },
+	        _react2.default.createElement('canvas', { ref: 'loiter', style: { width: '100%', height: '100%' } })
+	      );
+	    }
+	  }]);
 	
-		return Profiles;
+	  return Profiles;
 	}(_react.Component);
 	
 	exports.default = Profiles;
+
+/***/ },
+/* 255 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	var loiter = new Object();
+	/* loiter.js by Scott */!function (a) {
+		var b = {
+			WIDTH: window.innerWidth,
+			HEIGHT: window.innerHeight,
+			POINT: 17,
+			FPS: 60,
+			lineColor: "rgba(0,0,0,.02)",
+			lineWidth: 1,
+			circleColor: "rgba(0,0,0,.05)",
+			canvas: document.getElementById("loiter"),
+			mode: "impact",
+			circleArr: [],
+			context: {},
+			start: function start(a) {
+				var b = this;
+				a && (b.WIDTH = a.width ? a.width : b.WIDTH, b.HEIGHT = a.height ? a.height : b.HEIGHT, b.POINT = a.num ? a.num : b.POINT, b.canvas = a.container ? a.container : b.canvas, b.FPS = a.FPS ? a.FPS : b.FPS, b.mode = a.mode ? a.mode : b.mode), "impact" != b.mode && "through" != b.mode && (b.mode = "impact"), b.FPS > 1e3 && (b.FPS = 1e3), b.canvas.width = b.WIDTH, b.canvas.height = b.HEIGHT, b.context = b.canvas.getContext("2d"), b.context.strokeStyle = b.lineColor, b.context.strokeWidth = b.lineWidth, b.context.fillStyle = b.circleColor, a && (b.context.fillStyle = a.circleColor ? a.circleColor : b.circleColor), b.init(), setInterval(function () {
+					for (var a = 0; a < b.POINT; a++) {
+						var c = b.circleArr[a];
+						c.x += c.moveX, c.y += c.moveY, "impact" == b.mode ? (c.x > b.WIDTH - c.r ? (c.x = b.WIDTH - c.r, c.moveX = -c.moveX) : c.x < c.r && (c.x = c.r, c.moveX = -c.moveX), c.y > b.HEIGHT - c.r ? (c.y = b.HEIGHT - c.r, c.moveY = -c.moveY) : c.y < c.r && (c.y = c.r, c.moveY = -c.moveY)) : "through" == b.mode && (c.x > b.WIDTH ? c.x = 0 : c.x < 0 && (c.x = b.WIDTH), c.y > b.HEIGHT ? c.y = 0 : c.y < 0 && (c.y = b.HEIGHT));
+					}
+					b.draw();
+				}, 1e3 / b.FPS);
+			},
+			line: function line(a, b, c, d, e) {
+				this.beginX = a, this.beginY = b, this.closeX = c, this.closeY = d, this.o = e;
+			},
+			circle: function circle(a, b, c, d, e) {
+				this.x = a, this.y = b, this.r = c, this.moveX = d, this.moveY = e;
+			},
+			num: function num(a, b) {
+				var c = arguments[1] || 0;
+				return Math.floor(Math.random() * (a - c + 1) + c);
+			},
+			drawCircle: function drawCircle(a, b, c, d, e, f) {
+				var g = this,
+				    h = new g.circle(b, c, d, e, f);
+				return a.beginPath(), a.arc(h.x, h.y, h.r, 0, 2 * Math.PI), a.closePath(), a.fill(), h;
+			},
+			drawLine: function drawLine(a, b, c, d, e, f) {
+				var g = this,
+				    h = new g.line(b, c, d, e, f);
+				a.beginPath(), a.strokeStyle = "rgba(0,0,0," + f + ")", a.moveTo(h.beginX, h.beginY), a.lineTo(h.closeX, h.closeY), a.closePath(), a.stroke();
+			},
+			init: function init() {
+				var a = this;
+				a.circleArr = [];
+				for (var b = 0; b < a.POINT; b++) {
+					a.circleArr.push(a.drawCircle(a.context, a.num(a.WIDTH), a.num(a.HEIGHT), a.num(10, 2), a.num(10, -10) / 40, a.num(10, -10) / 40));
+				}
+			},
+			draw: function draw() {
+				var a = this;
+				a.context.clearRect(0, 0, a.canvas.width, a.canvas.height);
+				for (var b = 0; b < a.POINT; b++) {
+					a.drawCircle(a.context, a.circleArr[b].x, a.circleArr[b].y, a.circleArr[b].r);
+				}for (b = 0; b < a.POINT; b++) {
+					for (var c = 0; c < a.POINT; c++) {
+						if (b + c < a.POINT) {
+							var d = Math.abs(a.circleArr[b + c].x - a.circleArr[b].x),
+							    e = Math.abs(a.circleArr[b + c].y - a.circleArr[b].y),
+							    f = Math.sqrt(d * d + e * e),
+							    g = 1 / f * 7 - .009,
+							    h = g > .03 ? .03 : g;
+							h > 0 && a.drawLine(a.context, a.circleArr[b].x, a.circleArr[b].y, a.circleArr[b + c].x, a.circleArr[b + c].y, h);
+						}
+					}
+				}
+			}
+		};
+		a.loiter = b;
+	}(loiter);
+	exports.default = loiter;
 
 /***/ }
 /******/ ]);

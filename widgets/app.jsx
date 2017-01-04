@@ -1,7 +1,7 @@
 import './../css/global.css'
 import React, {Component } from 'react';
 import {render } from 'react-dom';
-import { Router, Route, Link,IndexRoute ,hashHistory,Redirect } from 'react-router';
+import { Router, Route, Link,IndexRoute ,hashHistory,Redirect,browserHistory } from 'react-router';
 import Header from './components/header/Header.jsx'
 import Nav from './components/header/navigation.jsx'
 import Name from './components/header/name.jsx'
@@ -34,7 +34,7 @@ class App extends Component{
 }
 
 render((
-	<Router history={history}>
+	<Router history={hashHistory}>
 		<Redirect from="/" to="/Article" />
 		<Route path="/" component={App}>
 			<Route path="/Article" component={Article}>
