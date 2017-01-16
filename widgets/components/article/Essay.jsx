@@ -32,24 +32,20 @@ export default class Essay extends Component {
 	}
 	componentDidMount() {
 	}
+	componentWillUnmount() {
+	}
 	backTowards(){
 		history.goBack();
 	}
 	render(){
 		return (
-			<ReactCSSTransitionGroup component="div" 
-						transitionName="essay"
-      					transitionEnterTimeout={300}
-      					transitionLeaveTimeout={300}
-      					transitionAppear={true}
-      					transitionAppearTimeout={300}
-      					>
 			<div 
+				key='0'
 				id='ess' 
+				ref = 'ess'
 				dangerouslySetInnerHTML={{__html:this.state.content}} 
-			 	onDoubleClick={this.backTowards} style={css}>
+			 	onDoubleClick={this.backTowards.bind(this)} style={css}>
 			</div>
-			</ReactCSSTransitionGroup>
 			)
 	}
 }

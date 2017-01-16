@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Hospital extends Component {
   render() {
     return (
-      <h1></h1>
+      <h1>2</h1>
     );
   }
 }

@@ -38,7 +38,6 @@ export default class Article extends Component {
     return (
       <div id="article" ref='article' style={css}>
       	<Titles titles={this.state.titles}/>
-      		{this.props.children}
       	<div className='clear'></div>
       </div>
     );

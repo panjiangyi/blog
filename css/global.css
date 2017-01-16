@@ -48,26 +48,29 @@ div#profiles {
 	clear:both;
 }
 
-.essay-enter {
+#ess.essay-enter {
 	opacity: 0;
 	transform: translateX(-250px);
+	transition: 0.3s;
 }
-.essay-enter.essay-enter-active {
+#ess.essay-enter.essay-enter-active {
 	opacity: 1;
 	transform: translateX(0);
-	transition: 0.3s;
 }
-.essay-leave.essay-leave-active {
+#ess.essay-leave {
+  	opacity: 1;
+  	transform: translateX(0px);
+}
+#ess.essay-leave.essay-leave-active {
 	opacity: 0;
 	transform: translateX(-250px);
 	transition: 0.3s;
 }
-.essay-appear {
+#ess.essay-appear {
 	opacity: 0;
 	transform: translateX(-250px);
 }
-
-.essay-appear-active {
+#ess.essay-appear-active {
 	opacity: 1;
 	transform: translateX(0);
 	transition: 0.3s;

@@ -12,6 +12,7 @@ import Hospital from './components/Hospital.jsx'
 import School from './components/School.jsx'
 import history from './components/history'
 import Profiles from './components/profiles/Profiles.jsx'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 const css = {
 	width:'100%',
 	height:'100%'
@@ -27,7 +28,18 @@ class App extends Component{
 				<Header />
 				<PushAway />
       			<Profiles />
-				{this.props.children}
+      			<ReactCSSTransitionGroup component="div"
+									transitionName="essay"
+			      					transitionEnterTimeout={300}
+			      					transitionLeaveTimeout={300}
+			      					transitionAppear={true}
+			      					transitionAppearTimeout={300}
+			      					>
+				{/*this.props.children*/}
+				{React.cloneElement(this.props.children, {
+            key: (console.log(this.props.location.pathname),this.props.location.pathname)
+          })}
+				</ReactCSSTransitionGroup>
 			</div>
 			)
 	}
@@ -37,12 +49,12 @@ render((
 	<Router history={hashHistory}>
 		<Redirect from="/" to="/Article" />
 		<Route path="/" component={App}>
-			<Route path="/Article" component={Article}>
-				<Redirect from="Essay/:id" to="/Essay/:id" />
-			</Route>
-			<Route   path='/Essay/:id' component={Essay}/>
-			<Route path="/About" component={School}/>
-			<Route path="/Culture" component={Hospital}/>
+		<Route path="/Article" component={Article}>
+			<Redirect from="Essay/:id" to="/Essay/:id" />
+		</Route>
+		<Route   path='/Essay/:id' component={Essay}/>
+		<Route path="/About" component={School}/>
+		<Route path="/Culture" component={Hospital}/>
 		</Route>	
 	</Router>
 ), document.getElementById('app'));
