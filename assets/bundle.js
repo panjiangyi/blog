@@ -27711,7 +27711,7 @@
 		return _react2.default.createElement(
 			'span',
 			{ style: css },
-			'AlwaysWet King'
+			'Pjy\'s Blog'
 		);
 	};
 	exports.default = Name;
@@ -27869,34 +27869,22 @@
 			var _this = _possibleConstructorReturn(this, (Article.__proto__ || Object.getPrototypeOf(Article)).call(this, props));
 	
 			_this.state = {
-				titles: [{
-					title: '修辞',
-					path: 1,
-					preView: '中学的时候。 我问同桌。 怎么样才能让语言看上去更有美感……'
-				}, {
-					title: '当时我就被赶出了考场',
-					path: 2,
-					preView: '交白卷是一种怎样的体验？'
-				}, {
-					title: '还没写',
-					path: 3,
-					preView: '还没写'
-				}, {
-					title: '还没写',
-					path: 4,
-					preView: '还没写'
-				}, {
-					title: '还没写',
-					path: 5,
-					preView: '还没写'
-				}]
+				titles: []
 			};
 			return _this;
 		}
 	
 		_createClass(Article, [{
 			key: 'componentDidMount',
-			value: function componentDidMount() {}
+			value: function componentDidMount() {
+				var _this2 = this;
+	
+				fetch('https://' + location.hostname + '/contents/title.json').then(function (response) {
+					return response.json();
+				}).then(function (data) {
+					_this2.setState({ titles: data });
+				});
+			}
 		}, {
 			key: 'render',
 			value: function render() {
@@ -29187,7 +29175,7 @@
 				var _this2 = this;
 	
 				// console.log(`http://${location.hostname}/contents/${this.props.params.id}.md`)
-				fetch('http://' + location.hostname + ':8080/contents/' + this.props.params.id + '.md').then(function (response) {
+				fetch('https://' + location.hostname + '/contents/' + this.props.params.id + '.md').then(function (response) {
 					return response.text();
 				}).then(function (data) {
 					_this2.setState({ content: (0, _marked2.default)(data) });
