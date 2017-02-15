@@ -35,9 +35,8 @@ class App extends Component{
 			      					transitionAppear={true}
 			      					transitionAppearTimeout={300}
 			      					>
-				{/*this.props.children*/}
 				{React.cloneElement(this.props.children, {
-            key: (console.log(this.props.location.pathname),this.props.location.pathname)
+            key: this.props.location.pathname
           })}
 				</ReactCSSTransitionGroup>
 			</div>
