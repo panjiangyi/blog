@@ -13,7 +13,7 @@ export default class Article extends Component {
 		}
 	}
 	componentDidMount() {
-		fetch(`https://${location.hostname}/contents/title.json`)
+		fetch(`/contents/title.json`)
 		.then(response => response.json())
 		  .then(data => {
 		  	this.setState({titles:data});

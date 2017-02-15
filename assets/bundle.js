@@ -27879,7 +27879,7 @@
 			value: function componentDidMount() {
 				var _this2 = this;
 	
-				fetch('https://' + location.hostname + '/contents/title.json').then(function (response) {
+				fetch('/contents/title.json').then(function (response) {
 					return response.json();
 				}).then(function (data) {
 					_this2.setState({ titles: data });
@@ -29175,7 +29175,7 @@
 				var _this2 = this;
 	
 				// console.log(`http://${location.hostname}/contents/${this.props.params.id}.md`)
-				fetch('https://' + location.hostname + '/contents/' + this.props.params.id + '.md').then(function (response) {
+				fetch('/contents/' + this.props.params.id + '.md').then(function (response) {
 					return response.text();
 				}).then(function (data) {
 					_this2.setState({ content: (0, _marked2.default)(data) });

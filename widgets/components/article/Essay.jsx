@@ -23,7 +23,7 @@ export default class Essay extends Component {
 	}
 	componentWillMount() {
 		// console.log(`http://${location.hostname}/contents/${this.props.params.id}.md`)
-		fetch(`https://${location.hostname}/contents/${this.props.params.id}.md`)
+		fetch(`/contents/${this.props.params.id}.md`)
 		.then(response => response.text())
 		  .then(data => {
 		  	this.setState({content:marked(data)});
