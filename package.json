@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/.bin/webpack-dev-server --devtool source-map --progress --port 5000"
+    "start": "node_modules/.bin/webpack-dev-server --devtool source-map --progress"
   },
   "author": "",
   "license": "ISC",
